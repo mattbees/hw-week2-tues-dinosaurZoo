@@ -60,8 +60,8 @@ describe('Park', function() {
     expect(park.calcVisitorsYear()).toBe(40150);
   });
 
-  xtest('should be able to calculate ticket sales per year', () => {
-    expect(park.calcTicketSales()).toBe(/*arg*/);
+  test('should be able to calculate ticket sales per year', () => {
+    expect(park.calcTicketSales()).toBe(803000);
   });
 
 // extension:

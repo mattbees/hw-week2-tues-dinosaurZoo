@@ -49,6 +49,10 @@ class Park {
   };
 
 
+  calcTicketSales() {
+    return this.calcVisitorsYear()*this.ticketPrice;
+  };
+
 // extension:
   removeSpecies(species, dinos) {
     let filteredDinos = [];
