@@ -35,9 +35,9 @@ describe('Park', function() {
     expect(park.dinos.length).toBe(3);
   });
 
-  xtest('should be able to remove a dinosaur from its collection', () => {
+  test('should be able to remove a dinosaur from its collection', () => {
     park.removeDino();
-    expect(park.dinos.length).toBe(/*arg*/);
+    expect(park.dinos.length).toBe(1);
   });
 
   xtest('should be able to find the dinosaur that attracts the most visitors', () => {
