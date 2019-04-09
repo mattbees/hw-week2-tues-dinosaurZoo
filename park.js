@@ -3,6 +3,12 @@ class Park {
     this._name = name;
     this._ticketPrice = ticketPrice;
     this.dinos = [];
+    // experiment:
+    this.dietTypes = {
+      carnivore: 0,
+      omnivore: 0,
+      herbivore: 0
+    };
   };
   get name() {
     return this._name;
@@ -64,7 +70,18 @@ class Park {
     this.dinos = filteredDinos;
   };
 
-
+  reportDietTypes() {
+    for (let dino of this.dinos) {
+      if (dino.diet === 'carnivore') {
+        this.dietTypes.carnivore++;
+      } else if (dino.diet === 'herbivore') {
+         this.dietTypes.herbivore++;
+      } else if (dino.diet === 'omnivore') {
+        this.dietTypes.omnivore++;
+      };
+    };
+    return this.dietTypes;
+  };
 
 };
 

@@ -8,6 +8,7 @@ describe('Park', function() {
   let dino2;
   let dino3;
   let dino4;
+  let diets;
 
   beforeEach( () => {
     park = new Park('Big Park', 20);
@@ -16,6 +17,11 @@ describe('Park', function() {
     dino3 = new Dinosaur('Diplodocus', 'herbivore', 50);
     dino4 = new Dinosaur('Stegasaurus', 'omnivore', 55);
     park.dinos = [dino1, dino2];
+    diets = {
+      carnivore: 1,
+      herbivore: 2,
+      omnivore: 1
+    };
   });
 
   test('should have a name', () => {
@@ -68,6 +74,12 @@ describe('Park', function() {
     park.addDino(dino4);
     park.removeSpecies('Diplodocus', park.dinos);
     expect(park.dinos).toEqual([dino2, dino4]);
+  });
+
+  test('should be able to report diet types and number of dinos in park with that diet type', () => {
+    park.addDino(dino3);
+    park.addDino(dino4);
+    expect(park.reportDietTypes()).toEqual(diets);
   });
 
 });
