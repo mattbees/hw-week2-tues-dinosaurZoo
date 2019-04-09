@@ -15,18 +15,19 @@ describe('Park', function() {
     dino2 = new Dinosaur('T-Rex', 'carnivore', 65);
     dino3 = new Dinosaur('Diplodocus', 'herbivore', 50);
     dino4 = new Dinosaur('Stegasaurus', 'omnivore', 55);
+    park.dinos = [dino1, dino2];
   });
 
   test('should have a name', () => {
     expect(park.name).toBe('Big Park');
   });
 
-  xtest('should have a ticket price', () => {
+  test('should have a ticket price', () => {
     expect(park.ticketPrice).toBe(20);
   });
 
-  xtest('should have a collection of dinosaurs', () => {
-    expect(park.dinos).not.toBe(undefined); // BETTER TEST?
+  test('should have a collection of dinosaurs', () => {
+    expect(park.dinos).toEqual([dino1, dino2]);
   });
 
   xtest('should be able to add a dinosaur to its collection', () => {
