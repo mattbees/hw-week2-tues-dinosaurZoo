@@ -30,9 +30,9 @@ describe('Park', function() {
     expect(park.dinos).toEqual([dino1, dino2]);
   });
 
-  xtest('should be able to add a dinosaur to its collection', () => {
-    park.addDino(dino);
-    expect(park.dinos.length).toBe(/*arg*/);
+  test('should be able to add a dinosaur to its collection', () => {
+    park.addDino(dino3);
+    expect(park.dinos.length).toBe(3);
   });
 
   xtest('should be able to remove a dinosaur from its collection', () => {
