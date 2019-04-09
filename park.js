@@ -18,12 +18,13 @@ class Park {
   };
   findTopAttraction(dinos) {
     let topDino = dinos[0];
+    console.log(topDino);  // delete this
     for (let dino of dinos) {
-      if (dino.guestsAttractedPerDay() > topDino.guestsAttractedPerDay()) {
+      if (dino.guestsAttractedPerDay > topDino.guestsAttractedPerDay) {
         topDino = dino;
       };
     };
-    return topDino.name;
+    return topDino;
   };
   // alternative: sort dinos based on guestsAttractedPerDay and extract top one
   returnSpecies(species, dino) {

@@ -40,12 +40,12 @@ describe('Park', function() {
     expect(park.dinos.length).toBe(1);
   });
 
-  xtest('should be able to find the dinosaur that attracts the most visitors', () => {
-    expect(park.findTopAttraction(dinos)).toBe(/*arg*/);
+  test('should be able to find the dinosaur that attracts the most visitors', () => {
+    expect(park.findTopAttraction(park.dinos)).toEqual(dino2);
   });
 
   xtest('should be able to find all dinosaurs of a particular species', () => {
-    expect(park.returnSpecies(species, dinos)).toEqual(/*args*/);
+    expect(park.returnSpecies(species, dinos)).toEqual(dino2);
   });
 
   xtest('should be able to calculate total visitors per day', () => {
