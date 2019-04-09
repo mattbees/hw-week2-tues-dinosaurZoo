@@ -18,7 +18,6 @@ class Park {
   };
   findTopAttraction(dinos) {
     let topDino = dinos[0];
-    console.log(topDino);  // delete this
     for (let dino of dinos) {
       if (dino.guestsAttractedPerDay > topDino.guestsAttractedPerDay) {
         topDino = dino;
@@ -27,7 +26,7 @@ class Park {
     return topDino;
   };
   // alternative: sort dinos based on guestsAttractedPerDay and extract top one
-  returnSpecies(species, dino) {
+  returnSpecies(species, dinos) {
     let speciesDinos = [];
     for (let dino of dinos) {
       if (dino.species === species) {
