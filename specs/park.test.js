@@ -50,12 +50,14 @@ describe('Park', function() {
     expect(park.returnSpecies('Diplodocus', park.dinos)).toEqual([dino1, dino3]);
   });
 
-  xtest('should be able to calculate total visitors per day', () => {
-    expect(park.calcVisitorsDay()).toBe(/*arg*/);
+  test('should be able to calculate total visitors per day', () => {
+    console.log(park.calcVisitorsDay());
+    expect(park.calcVisitorsDay()).toBe(110);
   });
 
-  xtest('should be able to calculate total visitors per year', () => {
-    expect(park.calcVisitorsYear()).toBe(/*arg*/);
+  test('should be able to calculate total visitors per year', () => {
+    console.log(park.calcVisitorsYear());
+    expect(park.calcVisitorsYear()).toBe(40150);
   });
 
   xtest('should be able to calculate ticket sales per year', () => {

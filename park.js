@@ -36,11 +36,18 @@ class Park {
     return speciesDinos;
   };
 
+  calcVisitorsDay() {
+    let total = 0;
+    for (let dino of this.dinos) {
+      total += dino.guestsAttractedPerDay;
+    };
+    return total;
+  };
 
+  calcVisitorsYear() {
+    return this.calcVisitorsDay()*365;
+  };
 
-
-// calcVisitorsDay() will return visitors per day
-// calcVisitorsYear() returns above * 365
 
 // extension:
   removeSpecies(species, dinos) {
