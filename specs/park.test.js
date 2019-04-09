@@ -51,12 +51,10 @@ describe('Park', function() {
   });
 
   test('should be able to calculate total visitors per day', () => {
-    console.log(park.calcVisitorsDay());
     expect(park.calcVisitorsDay()).toBe(110);
   });
 
   test('should be able to calculate total visitors per year', () => {
-    console.log(park.calcVisitorsYear());
     expect(park.calcVisitorsYear()).toBe(40150);
   });
 
@@ -64,9 +62,12 @@ describe('Park', function() {
     expect(park.calcTicketSales()).toBe(803000);
   });
 
-// extension:
-  xtest('should be able to remove all dinosaurs of a particular species', () => {
-    expect(park.removeSpecies(species, dinos)).toEqual(/*args*/);
+// Extensions:
+  test('should be able to remove all dinosaurs of a particular species', () => {
+    park.addDino(dino3);
+    park.addDino(dino4);
+    park.removeSpecies('Diplodocus', park.dinos);
+    expect(park.dinos).toEqual([dino2, dino4]);
   });
 
 });

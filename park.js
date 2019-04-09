@@ -54,15 +54,17 @@ class Park {
   };
 
 // extension:
-  removeSpecies(species, dinos) {
+  removeSpecies(speciesName, dinos) {
     let filteredDinos = [];
     for (let dino of dinos) {
-      if (dino.species !== species) {
+      if (dino.species !== speciesName) {
         filteredDinos.push(dino);
       };
     };
-    park.dinos = filteredDinos;
+    this.dinos = filteredDinos;
   };
+
+
 
 };
 
