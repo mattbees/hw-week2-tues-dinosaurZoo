@@ -4,19 +4,25 @@ const Dinosaur = require('../dinosaur.js');
 describe('Park', function() {
 
   let park;
-  let dino;
+  let dino1;
+  let dino2;
+  let dino3;
+  let dino4;
 
   beforeEach( () => {
-    park = new Park(/*args*/);
-    dino = new Dinosaur(/*args*/);
+    park = new Park('Big Park', 20);
+    dino1 = new Dinosaur('Diplodocus', 'herbivore', 45);
+    dino2 = new Dinosaur('T-Rex', 'carnivore', 65);
+    dino3 = new Dinosaur('Diplodocus', 'herbivore', 50);
+    dino4 = new Dinosaur('Stegasaurus', 'omnivore', 55);
   });
 
-  xtest('should have a name', () => {
-    expect(park.name).not.toBe(undefined);
+  test('should have a name', () => {
+    expect(park.name).toBe('Big Park');
   });
 
   xtest('should have a ticket price', () => {
-    expect(park.ticketPrice).not.toBe(undefined);
+    expect(park.ticketPrice).toBe(20);
   });
 
   xtest('should have a collection of dinosaurs', () => {
@@ -41,6 +47,19 @@ describe('Park', function() {
     expect(park.returnSpecies(species, dinos)).toEqual(/*args*/);
   });
 
+  xtest('should be able to calculate total visitors per day', () => {
+    expect(park.calcVisitorsDay()).toBe(/*arg*/);
+  });
+
+  xtest('should be able to calculate total visitors per year', () => {
+    expect(park.calcVisitorsYear()).toBe(/*arg*/);
+  });
+
+  xtest('should be able to calculate ticket sales per year', () => {
+    expect(park.calcTicketSales()).toBe(/*arg*/);
+  });
+
+// extension:
   xtest('should be able to remove all dinosaurs of a particular species', () => {
     expect(park.removeSpecies(species, dinos)).toEqual(/*args*/);
   });

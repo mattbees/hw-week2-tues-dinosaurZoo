@@ -4,7 +4,7 @@ class Park {
     this._ticketPrice = ticketPrice;
     this.dinos = [];
   };
-  get _name() {
+  get name() {
     return this._name;
   };
   get ticketPrice() {
@@ -17,16 +17,15 @@ class Park {
     this.dinos.pop();
   };
   findTopAttraction(dinos) {
-    let top = dinos[0].guestsAttractedPerDay();
     let topDino = dinos[0];
     for (let dino of dinos) {
-      if (dino.guestsAttractedPerDay() > top) {
-        top = dino.guestsAttractedPerDay();
+      if (dino.guestsAttractedPerDay() > topDino.guestsAttractedPerDay()) {
         topDino = dino;
       };
     };
     return topDino.name;
   };
+  // alternative: sort dinos based on guestsAttractedPerDay and extract top one
   returnSpecies(species, dino) {
     let speciesDinos = [];
     for (let dino of dinos) {
@@ -37,6 +36,13 @@ class Park {
     return speciesDinos;
   };
 
+
+
+
+// calcVisitorsDay() will return visitors per day
+// calcVisitorsYear() returns above * 365
+
+// extension:
   removeSpecies(species, dinos) {
     let filteredDinos = [];
     for (let dino of dinos) {
@@ -44,9 +50,9 @@ class Park {
         filteredDinos.push(dino);
       };
     };
-    return filteredDinos;
+    park.dinos = filteredDinos;
   };
 
 };
 
-// park.removeSpecies(species, dinos) - removes all dinos of a particular species from the array.
+module.exports = Park;
